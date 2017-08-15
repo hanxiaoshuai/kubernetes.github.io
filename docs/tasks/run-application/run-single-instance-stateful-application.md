@@ -15,7 +15,7 @@ application is MySQL.
 
 * Create a PersistentVolume referencing a disk in your environment.
 * Create a MySQL Deployment.
-* Expose MySQL to other pods in the cluster at a known DNS name.
+* Expose MySQL to other Pods in the cluster at a known DNS name.
 
 {% endcapture %}
 
@@ -106,7 +106,7 @@ for a secure solution.
           ---------    --------    -----    ----                -------------    --------    ------            -------
           33s          33s         1        {deployment-controller }             Normal      ScalingReplicaSet Scaled up replica set mysql-63082529 to 1
 
-1. List the pods created by the Deployment:
+1. List the Pods created by the Deployment:
 
        kubectl get pods -l app=mysql
 
@@ -160,7 +160,7 @@ Run a MySQL client to connect to the server:
 kubectl run -it --rm --image=mysql:5.6 mysql-client -- mysql -h <pod-ip> -p <password>
 ```
 
-This command creates a new Pod in the cluster running a mysql client
+This command creates a new Pod in the cluster running a MySQL client
 and connects it to the server through the Service. If it connects, you
 know your stateful MySQL database is up and running.
 
@@ -185,7 +185,7 @@ specific to stateful apps:
   YAML file. This instructs Kubernetes to _not_ use rolling
   updates. Rolling updates will not work, as you cannot have more than
   one Pod running at a time. The `Recreate` strategy will stop the
-  first pod before creating a new one with the updated configuration.
+  first Pod before creating a new one with the updated configuration.
 
 ## Deleting a deployment
 
