@@ -203,7 +203,7 @@ server, and an `xtrabackup` container that acts as a
 
 The `xtrabackup` sidecar looks at the cloned data files and determines if
 it's necessary to initialize MySQL replication on the slave.
-If so, it waits for `mysqld` to be ready and then executes the
+If so, it waits for `mysqld` to be Ready and then executes the
 `CHANGE MASTER TO` and `START SLAVE` commands with replication parameters
 extracted from the XtraBackup clone files.
 
